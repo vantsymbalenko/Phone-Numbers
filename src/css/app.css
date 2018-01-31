@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	min-height: 100vh;
+	height: 100%;
+	background-image: url("../image/backgroundImage.jpg");
+	background-repeat: no-repeat;
+	background-size: 100vw 100%;
+}
+.container{
+	margin: 0 auto;
+	width: 800px;
+	display: grid;
+	grid-row-gap: 30px;
+	grid-template-areas : 
+	'search'
+	'results'
+	'add-area';
+}
+
+@media screen and (max-width:920px){
+	.container{
+		width: 100%;
+	}
+}

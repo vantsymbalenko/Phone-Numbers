@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
+import '../css/search.css';
 
 export default class Search extends Component{
-	constructor(props){
-		super(props);
-		this.search = this.search.bind(this);
+	
+	search = (e) => {
+		this.props.setSearchValue(e.target.value);
 	}
-	search(e){
-		e.preventDefault();
-		this.props.setSearchValue(this.inputValue.value);
-	}
+
 	render(){
-		// console.log(this.props.searchValue);
 		return(
-			<div>
-				<label>
-					<span> search name</span>
-					<input type="text" 
-					ref={(input) => {
-						this.inputValue = input;
-					}}/>
-				</label>
-				<button onClick = {this.search}>search</button>
-				<div>{this.props.searchValue.phone}</div>
+			<div className="search">
+				<div>
+					<input 
+						type="text" 
+						placeholder ="Country"
+						value = {this.props.searchValue}
+						onChange = {this.search}
+					/>
+				</div>
+				<div>
+					<button onClick = {this.search}>Search</button>
+				</div>
 			</div>
 		);
 	}

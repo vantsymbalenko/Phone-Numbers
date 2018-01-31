@@ -4,6 +4,7 @@ import Search from './containers/Search.js';
 import Add from './containers/Add.js';
 import Results from './containers/Results.js';
 import configureStore from './store/configurateStore';
+import './css/app.css';
 
 let store = configureStore();
 
@@ -11,10 +12,10 @@ class App extends Component {
   render() {
     return (
       <Provider store = {store}>
-        <div>
+        <div className="container">
           <Search />
-          <Add />
           <Results />
+          <Add />
         </div>
       </Provider>
     );
